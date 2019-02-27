@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('appLayout.basecontent')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="container row ">
+        <div class="col-md-9 " style="margin-top: 10%">
+            <div class="">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
@@ -75,3 +75,5 @@
     </div>
 </div>
 @endsection
+@section('products')
+@endsection()

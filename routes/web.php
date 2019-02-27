@@ -18,6 +18,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource('opportunities', 'OpportunitiesController')->middleware('auth');
 
+Route::get('/services/{service_cat}','ServicesController@serviceByCat')->middleware('auth')->name('service_by_cat');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

@@ -9,7 +9,7 @@ class EntreprisesController extends Controller
 {
     public function index()
     {
-        $entreprises= Entreprises::all();
+        $entreprises= Entreprises::take(2)->get();
 
         // echo json_encode($opps) ;
         return view('other.entreprises.index',['entreprises'=>$entreprises]) ;

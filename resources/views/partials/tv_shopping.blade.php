@@ -1,7 +1,8 @@
 
+<div class="home-v3-ads-block animate-in-view fadeIn animated" data-animation=" animated fadeIn">
 
-<div class="row align-items-center">
-    <div class="col-md-8  justify-content-center">
+    <div class="ads-block row">
+    <div class="col-md-8 col-md-offset-2">
         <header class="entry-header">
             <h1 class="entry-title">TV SHOPPING</h1>
         </header>
@@ -14,4 +15,6 @@
             </iframe>
         </div>
     </div>
+    </div>
 </div>
+

@@ -60,9 +60,10 @@
         </div><!-- .features-list -->
     </div><!-- .home-v3-features-block -->
 
+
     @include('partials.tv_shopping')
-
-    @endsection()
-
 @section('products')
+
+    @include('partials.entreprises_home')
+@endsection()
     @endsection()

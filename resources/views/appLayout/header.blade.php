@@ -12,8 +12,15 @@
                     <li class="menu-item animate-dropdown"><a title="Store Locator" href="#"><i class="ec ec-map-pointer"></i>Store Locator</a></li>
                     <li class="menu-item animate-dropdown"><a title="Track Your Order" href="track-your-order.html"><i class="ec ec-transport"></i>Track Your Order</a></li>
                     <li class="menu-item animate-dropdown"><a title="Shop" href="shop.html"><i class="ec ec-shopping-bag"></i>Shop</a></li>
+                   @auth
                     <li class="menu-item animate-dropdown"><a title="My Account" href="my-account.html"><i class="ec ec-user"></i>My Account</a></li>
+                    @endauth
+                    @guest
+                        <li class="menu-item animate-dropdown"><a title="My Account" href="{{route('login')}}"><i class="ec ec-user"></i>Login / Register</a></li>
+                    @endguest()
                 </ul>
+
+
             </nav>
         </div>
     </div><!-- /.top-bar -->
@@ -154,12 +161,41 @@
                 </button>
             </div>
 
-            <div class="collapse navbar-toggleable-xs" id="header-v3">
-                <ul class="nav navbar-nav">
+            <div class="  collapse navbar-toggleable-xs" id="header-v3">
+                <ul class="yamm nav navbar-nav ">
                     <li class="menu-item"><a title="acceuil" href="product-category.html">{{strtoupper("acceuil")}}</a></li>
-                    <li class="menu-item"><a title="EXPORT" href="product-category.html">{{strtoupper('export')}}</a></li>
+                    <li class=" menu-item"><a title="EXPORT" href="#"  class="dropdown-toggle" data-toggle="dropdown">{{strtoupper('export')}}</a>
 
-                    <li class=" menu-item dropdown ">
+                        <ul class="dropdown-menu">
+                            <li class="nav-title menu-item"><a href="{{route('opportunities.index')}}">Habillement/ mode</a>
+                                <ul>
+                                    <a><ul class="menu-item">Bijous / accessoires  </ul></a>
+                                    <a><ul class="menu-item">Cuir  </ul></a>
+                                    <a> <ul class="menu-item">Habillement enfant / femme&nbsp;&nbsp;</ul></a>
+                                    <a><ul class="menu-item">Lingerie </ul></a>
+                                    <a><ul class="menu-item">Marquinerie </ul></a>
+
+                                </ul>
+                            </li>
+                            <li class="nav-title menu-item"><a href="{{route('opportunities.index')}}">Bien d’equipement</a>
+                                <ul>
+                                    <a><ul class="menu-item">Décoration</ul></a>
+                                    <a><ul class="menu-item">High-Tech</ul></a>
+                                    <a> <ul class="menu-item">Meubles</ul></a>
+                                    <a><ul class="menu-item">Télephonie </ul></a>
+
+                                </ul>
+                            </li>
+                            <li class="nav-title menu-item"><a href="{{route('opportunities.index')}}">Alimentaire</a>
+
+                            </li>
+
+
+                        </ul>
+
+                    </li>
+
+                    <li class=" menu-item dropdown animate-dropdown ">
                         <a title="{{strtoupper("OpportunitÉs d'affaires")}}" href="#"  class="dropdown-toggle" data-toggle="dropdown">{{strtoupper("OpportunitÉs d'affaires")}}</a>
                         <ul class="dropdown-menu">
                             <li class="menu-item"><a href="{{route('opportunities.index')}}">Consulter les opportunités</a></li>
@@ -169,12 +205,40 @@
 
                         </ul>
                     </li>
-                    <li class="menu-item"><a title="artisanat" href="product-category.html">{{strtoupper('artisanat')}}</a></li>
-                    <li class="menu-item"><a title="SERVICES" href="product-category.html">{{strtoupper('services')}}</a></li>
+                    <li class="menu-item"><a title="artisanat" href="product-category.html"  >{{strtoupper('artisanat')}}</a></li>
+                    <li class="menu-item dropdown"><a title="SERVICES" href="#" class="dropdown-toggle" data-toggle="dropdown">{{strtoupper('services')}}</a>
 
-                    <li class="menu-item"><a title="developpement informatique" href="product-category.html">{{strtoupper('dÉveloppement informatique')}}</a></li>
+                        <ul class="dropdown-menu">
+                            <li class="menu-item"><a href="{{route('opportunities.index')}}">Financement</a></li>
+                            <li class="nav-divider"></li>
+                            <li class="menu-item"><a href="{{route('opportunities.create')}}">Accompagnement </a></li>
+                            <li class="nav-divider"></li>
+                            <li class="menu-item"><a href="{{route('opportunities.create')}}">Creation des entreprises</a></li>
+                            <li class="nav-divider"></li>
+                            <li class="menu-item"><a href="{{route('opportunities.create')}}">Coaching</a></li>
+                            <li class="nav-divider"></li>
+                            <li class="menu-item"><a href="{{route('opportunities.create')}}">Formation</a></li>
+
+
+                        </ul>
+                    </li>
+
+                    <li class="menu-item dropdown"><a title="developpement informatique" href="#" class="dropdown-toggle" data-toggle="dropdown">{{strtoupper('dÉveloppement informatique')}}</a>
+                        <ul class="dropdown-menu">
+                            <li class="menu-item"><a href="{{route('opportunities.index')}}">Création des sites web</a></li>
+                            <li class="nav-divider"></li>
+                            <li class="menu-item"><a href="{{route('opportunities.create')}}">Création des applications mobiles</a></li>
+                            <li class="nav-divider"></li>
+                            <li class="menu-item"><a href="{{route('opportunities.create')}}">Accompagnement numerique</a></li>
+
+
+
+                        </ul>
+                    </li>
                     <li class="menu-item"><a title="financement" href="product-category.html">{{strtoupper('financement')}}</a></li>
+
                 </ul>
+
             </div><!-- /.collpase -->
         </div><!-- /.-container -->
     </nav><!-- /.navbar -->
