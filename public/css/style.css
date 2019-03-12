@@ -3764,7 +3764,7 @@ div.quantity.buttons_added {
     margin-left: -20px; }
 
 .full-color-background .header-v3 + .navbar-primary .navbar-nav > .menu-item > a {
-  padding: 0.907em 1.375em; }
+  padding: 0.907em 1.305em; }
 
 .full-color-background .top-bar {
   border-bottom: none; }
@@ -9955,3 +9955,11 @@ h3.faq-title {
   font-size: medium;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem; }
+
+.second-nav{
+  background-color: #2a33f5 !important;
+  font-size: 0.82em !important;
+}
+.spaced > a {
+  margin-right: 1.33em;
+}

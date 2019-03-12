@@ -9,10 +9,14 @@ class EntreprisesController extends Controller
 {
     public function index()
     {
-        $entreprises= Entreprises::take(2)->get();
 
-        // echo json_encode($opps) ;
-        return view('other.entreprises.index',['entreprises'=>$entreprises]) ;
+        $first = app('rinvex.categories.category')::where('slug','export')->first();
+        $cats = app('rinvex.categories.category')->descendantsOf($first)->toTree();
+
+        $entreprises = Entreprises::all();
+
+        return view('export.index',['cats'=>$cats,'entreprises'=>$entreprises]);
+      //  return json_encode($first) ;
     }
 
     public function show($id)
@@ -21,5 +25,20 @@ class EntreprisesController extends Controller
 
         // echo json_encode($opps) ;
         return view('other.entreprises.show',['entreprise'=>$entreprises]) ;
+    }
+
+    public function filterByCAt($catid)
+    {
+        $cat_arry[] =+ $catid ;
+
+
+        $first = app('rinvex.categories.category')::where('slug','export')->first();
+        $cats = app('rinvex.categories.category')->descendantsOf($first)->toTree();
+
+        $entreprises =Entreprises::withCategories($cat_arry)->get();
+
+        return view('export.index',['cats'=>$cats,'entreprises'=>$entreprises]);
+
+
     }
 }
